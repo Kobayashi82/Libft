@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 11:27:58 by vzurera-          #+#    #+#             */
-/*   Updated: 2023/11/30 15:51:51 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/03/11 19:23:00 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static char	*get_word(const char *str, int start, int end)
 	word[k] = '\0';
 	return (word);
 }
+
 static char	**init_result(const char *str, char c, int *i, int *j)
 {
 	*i = 0;

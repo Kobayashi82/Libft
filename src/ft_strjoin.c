@@ -6,7 +6,7 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 20:55:10 by vzurera-          #+#    #+#             */
-/*   Updated: 2026/03/11 18:41:37 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/03/11 19:33:20 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,34 +39,41 @@ char	*ft_strjoin(const char *v1, const char *v2, int md)
 	return (new_str);
 }
 
+static void	join_string(const char *v1, const char *v2, const char *v3, char *new_str)
+{
+	size_t	len;
+
+	len = ft_strlen(v1) + ft_strlen(v2) + ft_strlen(v3);
+	if (v1)
+	{
+		ft_strlcpy(new_str, v1, len + 1);
+		if (v2)
+			ft_strlcat(new_str, v2, len + 1);
+		if (v3)
+			ft_strlcat(new_str, v3, len + 1);
+	}
+	else if (v2)
+	{
+		ft_strlcpy(new_str, v2, len + 1);
+		if (v3)
+			ft_strlcat(new_str, v3, len + 1);
+	}
+	else if (v3)
+		ft_strlcpy(new_str, v3, len + 1);
+}
+
 char	*ft_strjoin_sep(const char *v1, const char *v2,	const char *v3, int md)
 {
 	char	*new_str;
-	int		len;
+	size_t	len;
 
 	len = ft_strlen(v1) + ft_strlen(v2) + ft_strlen(v3);
 	if (!v1 && !v2 && !v3)
 		return (NULL);
 	new_str = malloc(len + 1);
-	if (new_str) {
-		if (v1)
-		{
-			ft_strlcpy(new_str, v1, len + 1);
-			if (v2)
-				ft_strlcat(new_str, v2, len + 1);
-			if (v3)
-				ft_strlcat(new_str, v3, len + 1);
-		}
-		else if (v2)
-		{
-			ft_strlcpy(new_str, v2, len + 1);
-			if (v3)
-				ft_strlcat(new_str, v3, len + 1);
-		}
-		else if (v3)
-			ft_strlcpy(new_str, v3, len + 1);
-	}
-	if (v1 && (md == 1|| md == 4 || md == 6 || md == 7))
+	if (new_str)
+		join_string(v1, v2, v3, new_str);
+	if (v1 && (md == 1 || md == 4 || md == 6 || md == 7))
 		free((void *)v1);
 	if (v2 && (md == 2 || md == 4 || md == 5 || md == 7))
 		free((void *)v2);

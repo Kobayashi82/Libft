@@ -6,13 +6,13 @@
 /*   By: vzurera- <vzurera-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:13:57 by vzurera-          #+#    #+#             */
-/*   Updated: 2023/11/28 16:03:35 by vzurera-         ###   ########.fr       */
+/*   Updated: 2026/03/11 19:22:39 by vzurera-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strndup(const char *s1, size_t n)
+char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*copy;
 	size_t	len;
