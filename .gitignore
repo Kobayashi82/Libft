@@ -1,0 +1,24 @@
+*
+!.vscode
+!.vscode/**
+.vscode/launch.json
+.vscode/settings.json
+
+!doc
+!doc/**
+doc/Libft\ 19.2.pdf
+
+!images
+!images/**
+
+!inc
+!inc/**
+
+!src
+!src/**
+
+!Makefile
+!.gitignore
+!README.md
+!README_es.md
+!LICENSE
